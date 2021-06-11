@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react';
 
 import CharTag from './CharTag';
 
@@ -7,6 +7,8 @@ import './characters.css';
 export const Characters = ({darkMode}) => {
 
     const [characters, setCharacters] = useState([]);
+    const [nextUrl, setNextUrl] = useState("");
+    const [previewUrl, setPreviewUrl] = useState("");
     const [error, setError] = useState(false);
 
     const fetchCharacters = (url) =>{
@@ -23,17 +25,32 @@ export const Characters = ({darkMode}) => {
     useEffect(()=>{
         fetchCharacters("https://rickandmortyapi.com/api/character/");
     }, []);
+
+    const prevChar = useCallback(()=>{
+        fetchCharacters(previewUrl);
+    }, [previewUrl]);
+
+    const nextChar = useCallback(()=>{
+        fetchCharacters(nextUrl);
+    }, [nextUrl]);
+
     if(error){
         return(
             <div>Error</div>
         )
     }
     return (
+        <>
             <div className={`characters ${darkMode? "darkMode" : ""}`}>
                 {characters.map(character =>
                     <CharTag key={character.id} character={character} darkMode={darkMode}/>
                 )}
             </div>
+            <div>
+                    <button onClick={prevChar} disabled={previewUrl===""? "disabled": ""}>Previous</button>
+                    <button onClick={nextChar} disabled={nextUrl===""? "disabled": ""}>Next</button>
+            </div>
+        </>
     )
 }
 
