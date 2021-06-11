@@ -1,0 +1,12 @@
+.headerBtn{
+    margin: 0 2.8rem;
+    font-size: 3.5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--medium-blue-dm);
+    cursor: pointer;
+}
+
+.headerBtn.darkMode{
+    color: var(--accent-blue);
+}

@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+:root {
+  /*Colores*/
+  --accent-blue: #1A9AF7;
+  --green-light: #B9EFA4;
+  --green-blue: #1CDECB;
+
+  --dark-blue-dm: #102a43;
+  --medium-blue-dm: #243b53;
+  --soft-blue-dm: #334e68;
+  --light-blue-dm: #486581;
+  --clear-blue-dm:  #627D98;
+
+  --dark-blue-lm: #829ab1;
+  --medium-blue-lm: #9fb3c8;
+  --soft-blue-lm: #bcccdc;
+  --light-blue-lm: #d9e2ec;
+  --clear-blue-lm:  #f0f4f8;
+
+
+  --black-shadow: #59491e29;
+  --shadow-white: #faf8f738;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  font-size: 62.5%;
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Montserrat', sans-serif;
 }
