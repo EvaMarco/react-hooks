@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import HeaderBtn from "./HeaderBtn";
+import './header.css';
 
-const Header = () => {
-    const [darkMode, setDarkMode] = useState(false);
-    const handleClick = () =>{
-        setDarkMode(!darkMode);
-    }
+const Header = ({handleClick, darkMode}) => {
+
     return (
-        <div className="Header">
-            <h1>react Hooks</h1>
-            <button
-                type="button"
-                onClick={handleClick}
-            >
-                {darkMode ? "Dark Mode" : "Light Mode"}
-            </button>
-            <button
-                type="button"
-                onClick={() => setDarkMode(!darkMode)}
-            >
-                {darkMode ? "Dark Mode" : "Light Mode"}
-            </button>
+        <div className={`header ${darkMode? "darkMode" : ""}`}>
+            <div className="title-wrapper">
+                <h1 className="header--title">Curso Profesional de React Hooks</h1>
+                <p className="header--subtitle">by Eva Marco</p>
+            </div>
+            <HeaderBtn handleClick={ handleClick} darkMode={darkMode}/>
         </div>
     );
-}
+};
 
 export default Header;
