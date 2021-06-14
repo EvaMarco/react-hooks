@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext, useReducer } from 'react';
+import ThemeContext from "../context/ThemeContext";
 
 import CharTag from './CharTag';
 
 import './characters.css';
 
-export const Characters = ({darkMode}) => {
+export const Characters = () => {
+    const {darkMode} = useContext(ThemeContext);
 
     const [characters, setCharacters] = useState([]);
     const [nextUrl, setNextUrl] = useState("");
@@ -47,8 +49,8 @@ export const Characters = ({darkMode}) => {
                 )}
             </div>
             <div>
-                    <button onClick={prevChar} disabled={previewUrl===""? "disabled": ""}>Previous</button>
-                    <button onClick={nextChar} disabled={nextUrl===""? "disabled": ""}>Next</button>
+                <button onClick={prevChar} disabled={previewUrl===""? "disabled": ""}>Previous</button>
+                <button onClick={nextChar} disabled={nextUrl===""? "disabled": ""}>Next</button>
             </div>
         </>
     )

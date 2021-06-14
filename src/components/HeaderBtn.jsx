@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToggleOff } from '@fortawesome/free-solid-svg-icons';
 import { faToggleOn } from '@fortawesome/free-solid-svg-icons';
+import ThemeContext from '../context/ThemeContext';
 
 import './headerBtn.css';
 
-const HeaderBtn = ({handleClick, darkMode}) => {
+const HeaderBtn = () => {
+    const {darkMode, setDarkMode} = useContext(ThemeContext);
+    const handleClick = () => {
+        setDarkMode(!darkMode);
+    }
     return (
         <button
             className={`headerBtn ${darkMode? "darkMode" : ""}`}

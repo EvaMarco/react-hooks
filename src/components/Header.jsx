@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext }from "react";
+import ThemeContext from "../context/ThemeContext";
 import HeaderBtn from "./HeaderBtn";
 import './header.css';
 
-const Header = ({handleClick, darkMode}) => {
+const Header = () => {
+    const {darkMode} = useContext(ThemeContext);
 
     return (
         <div className={`header ${darkMode? "darkMode" : ""}`}>
@@ -10,7 +12,7 @@ const Header = ({handleClick, darkMode}) => {
                 <h1 className="header--title">Curso Profesional de React Hooks</h1>
                 <p className="header--subtitle">by Eva Marco</p>
             </div>
-            <HeaderBtn handleClick={ handleClick} darkMode={darkMode}/>
+                <HeaderBtn />
         </div>
     );
 };
