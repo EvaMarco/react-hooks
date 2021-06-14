@@ -1,7 +1,7 @@
 .charTag{
     width: 100%;
     display: grid;
-    grid-template-rows: 5rem 30rem 1fr;
+    grid-template-rows: 8rem 30rem 1fr;
     background-color: var(--clear-blue-lm);
     padding: 2rem;
     border-bottom: 1px solid var(--accent-blue);
@@ -56,4 +56,16 @@
 
 .list-item span {
     text-align: left;
+}
+
+.charTag-btn{
+    width: 50%;
+    font-size: 1.7rem;
+    background-color: var(--accent-blue);
+    border: none;
+    padding: 0.7rem;
+}
+
+.charTag-btn.darkMode{
+    background-color: var(--green-light);
 }
