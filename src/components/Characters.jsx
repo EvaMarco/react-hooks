@@ -5,8 +5,33 @@ import CharTag from './CharTag';
 
 import './characters.css';
 
+const initialState = {
+    favorites: []
+};
+
+const favoriteReducer = (state, action) =>{
+    switch(action.type){
+        case "ADD_TO_FAVORITES":
+            return {
+                ...state,
+                favorites: [...state.favorites, action.payload]
+            };
+        case "REMOVE_FROM_FAVORITES":
+            const pastState = {...state};
+            const filtered = pastState.favorites.filter(item => item.id !== action.payload.id);
+            console.log(filtered)
+            return {
+                ...state,
+                favorites: filtered
+            };
+        default:
+            return state;
+    }
+};
+
 export const Characters = () => {
     const {darkMode} = useContext(ThemeContext);
+    const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
     const [characters, setCharacters] = useState([]);
     const [nextUrl, setNextUrl] = useState("");
@@ -36,6 +61,14 @@ export const Characters = () => {
         fetchCharacters(nextUrl);
     }, [nextUrl]);
 
+    const handleFavoriteCLick = favorite => {
+        dispatch({type: 'ADD_TO_FAVORITES', payload: favorite})
+    };
+
+    const removeFavoriteOnClick = favorite => {
+        dispatch({type: 'REMOVE_FROM_FAVORITES', payload: favorite})
+    };
+
     if(error){
         return(
             <div>Error</div>
@@ -43,9 +76,17 @@ export const Characters = () => {
     }
     return (
         <>
+            <ul>{favorites.favorites.map(favorite =>
+                <li key={favorite.id} onClick={() => removeFavoriteOnClick(favorite)}>{favorite.name}</li>
+            )}</ul>
             <div className={`characters ${darkMode? "darkMode" : ""}`}>
                 {characters.map(character =>
-                    <CharTag key={character.id} character={character} darkMode={darkMode}/>
+                    <CharTag
+                        key={character.id}
+                        character={character}
+                        darkMode={darkMode}
+                        handleFavoriteCLick={handleFavoriteCLick}
+                    />
                 )}
             </div>
             <div>
