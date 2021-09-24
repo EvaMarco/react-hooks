@@ -1,7 +1,7 @@
 # Course react hooks by Platzi.
 
 This repo has been build during the course "Professional React Hooks" by
-platzi. It represents a simple a desk of characters get from an api.
+platzi. It represents a simple desk of characters get from an api.
 
 In this repo I'm trying to learn the use of different kinds of hooks and its
 uses.
