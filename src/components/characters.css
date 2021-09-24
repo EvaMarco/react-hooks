@@ -1,4 +1,4 @@
-.characters{
+.characters {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 5rem;
@@ -6,6 +6,6 @@
     background-color: var(--light-blue-lm);
 }
 
-.characters.darkMode{
+.characters.darkMode {
     background-color: var(--clear-blue-dm);
 }

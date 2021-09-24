@@ -1,20 +1,22 @@
-import './App.css';
-import Header from './components/Header';
-import Characters from './components/Characters';
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Characters from "./components/Characters";
+import Header from "./components/Header";
 import ThemeContext from "./context/ThemeContext";
 
-function App() {
-  const [darkMode, setDarkMode] = useState(false);
+import "./App.css";
 
-  return (
-    <ThemeContext.Provider value ={{darkMode, setDarkMode}}>
-      <div className="App">
-        <Header />
-        <Characters />
-      </div>
-    </ThemeContext.Provider>
-  );
+function App() {
+    const [darkMode, setDarkMode] = useState(false);
+
+    return (
+        // eslint-disable-next-line react/jsx-filename-extension
+        <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+            <div className="App">
+                <Header />
+                <Characters />
+            </div>
+        </ThemeContext.Provider>
+    );
 }
 
 export default App;
