@@ -66,7 +66,11 @@ const Characters = () => {
     }, [nextUrl]);
 
     const handleFavoriteCLick = (favorite) => {
-        dispatch({ type: "ADD_TO_FAVORITES", payload: favorite });
+        const favChars = favorites.favorites;
+        const duplicated = favChars.find((item) => item.id === favorite.id);
+        if (!duplicated) {
+            dispatch({ type: "ADD_TO_FAVORITES", payload: favorite });
+        }
     };
 
     const removeFavoriteOnClick = (favorite) => {
