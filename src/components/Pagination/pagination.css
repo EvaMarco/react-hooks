@@ -1,0 +1,45 @@
+.paginationWrapper {
+    padding: 5px;
+    background-color: var(--soft-blue-lm);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.paginationWrapper.darkMode {
+    background-color: var(--dark-blue-dm);
+}
+
+.paginationInputWrapper {
+    color: var(--medium-blue-dm);
+    font-size: 18px;
+}
+
+.paginationInputWrapper.darkMode {
+    color: var(--accent-blue);
+}
+
+.paginationInput {
+    font-size: 18px;
+    height: 30px;
+    padding: 5px;
+    margin: 0 7px;
+    background-color: var(--clear-blue-lm);
+    border: none;
+}
+
+.paginationInput.darkMode {
+    background-color: var(--green-light);
+}
+
+.paginationBtn {
+    background-color: var(--accent-blue);
+    margin: 5px;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+}
+
+.paginationBtn.darkMode {
+    background-color: var(--green-light);
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useContext, useReducer } from 
 import ThemeContext from "../context/ThemeContext";
 
 import CharTag from "./CharTag";
+import Pagination from "./Pagination/Pagination";
 
 import "./characters.css";
 
@@ -30,13 +31,13 @@ const favoriteReducer = (state, action) => {
 };
 
 const Characters = () => {
+    const baseUrl = "https://rickandmortyapi.com/api/character/";
     const { darkMode } = useContext(ThemeContext);
     const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
-
     const [characters, setCharacters] = useState([]);
-    const [nextUrl, setNextUrl] = useState("");
-    const [previewUrl, setPreviewUrl] = useState("");
     const [error, setError] = useState(false);
+
+    const [info, setInfo] = useState({});
 
     const fetchCharacters = (url) => {
         fetch(url)
@@ -44,8 +45,7 @@ const Characters = () => {
             .then((data) => {
                 setCharacters(data.results);
                 setError(false);
-                if (data.info.next) setNextUrl(data.info.next);
-                if (data.info.prev) setPreviewUrl(data.info.prev);
+                setInfo(data.info);
             })
             .catch((fetchError) => {
                 setError(true);
@@ -54,16 +54,8 @@ const Characters = () => {
     };
 
     useEffect(() => {
-        fetchCharacters("https://rickandmortyapi.com/api/character/");
-    }, []);
-
-    const prevChar = useCallback(() => {
-        fetchCharacters(previewUrl);
-    }, [previewUrl]);
-
-    const nextChar = useCallback(() => {
-        fetchCharacters(nextUrl);
-    }, [nextUrl]);
+        fetchCharacters(baseUrl);
+    }, [baseUrl]);
 
     const handleFavoriteCLick = (favorite) => {
         const favChars = favorites.favorites;
@@ -80,6 +72,7 @@ const Characters = () => {
     if (error) {
         return <div>Error</div>;
     }
+
     return (
         <>
             <ul>
@@ -101,22 +94,7 @@ const Characters = () => {
                     />
                 ))}
             </div>
-            <div>
-                <button
-                    type="button"
-                    onClick={prevChar}
-                    disabled={previewUrl === "" ? "disabled" : ""}
-                >
-                    Previous
-                </button>
-                <button
-                    type="button"
-                    onClick={nextChar}
-                    disabled={nextUrl === "" ? "disabled" : ""}
-                >
-                    Next
-                </button>
-            </div>
+            <Pagination baseUrl={baseUrl} fetchCharacters={fetchCharacters} info={info} />
         </>
     );
 };
