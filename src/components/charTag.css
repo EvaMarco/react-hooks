@@ -1,4 +1,4 @@
-.charTag{
+.charTag {
     width: 100%;
     display: grid;
     grid-template-rows: 8rem 30rem 1fr;
@@ -7,7 +7,7 @@
     border-bottom: 1px solid var(--accent-blue);
 }
 
-.charTag:hover{
+.charTag:hover {
     transform: scale(1.1);
     border-bottom: 3px solid var(--accent-blue);
     /* This timing applies on the way OUT */
@@ -16,40 +16,41 @@
     transition: 0.4s;
 }
 
-.charTag.darkMode{
+.charTag.darkMode {
     background-color: var(--medium-blue-dm);
     border-bottom: 1px solid var(--green-light);
 }
 
-.charTag.darkMode:hover{
+.charTag.darkMode:hover {
     border-bottom: 3px solid var(--green-light);
 }
 
-.charTag h2{
+.charTag h2 {
     font-size: 2.5rem;
     padding: 1.2rem;
     color: var(--dark-blue-dm);
 }
 
-.charTag ul{
+.charTag ul {
     font-size: 1.6rem;
     padding: 1.2rem;
     color: var(--dark-blue-dm);
 }
 
-.charTag.darkMode h2, .charTag.darkMode ul{
+.charTag.darkMode h2,
+.charTag.darkMode ul {
     color: var(--soft-blue-lm);
 }
 
-.details-list{
+.details-list {
     width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 
-.list-item{
-    display:grid;
+.list-item {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0.2rem 0;
 }
@@ -58,7 +59,7 @@
     text-align: left;
 }
 
-.charTag-btn{
+.charTag-btn {
     width: 50%;
     font-size: 1.7rem;
     background-color: var(--accent-blue);
@@ -66,6 +67,6 @@
     padding: 0.7rem;
 }
 
-.charTag-btn.darkMode{
+.charTag-btn.darkMode {
     background-color: var(--green-light);
 }

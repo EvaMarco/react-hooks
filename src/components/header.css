@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 10rem;
     text-align: center;
     background-color: var(--soft-blue-lm);
@@ -7,25 +7,26 @@
     align-items: center;
 }
 
-.header.darkMode{
+.header.darkMode {
     background-color: var(--dark-blue-dm);
 }
 
-.title-wrapper{
+.title-wrapper {
     flex-grow: 1;
 }
 
-.header--title{
-  font-family: 'Bebas Neue', cursive;
-  font-size: 3em;
-  color: var(--medium-blue-dm);
+.header--title {
+    font-family: "Bebas Neue", cursive;
+    font-size: 3em;
+    color: var(--medium-blue-dm);
 }
 
-.darkMode .header--title, .darkMode .header--subtitle{
+.darkMode .header--title,
+.darkMode .header--subtitle {
     color: var(--accent-blue);
 }
 
-.header--subtitle{
+.header--subtitle {
     padding-left: 25rem;
     font-size: 1.8rem;
     color: var(--dark-blue-dm);

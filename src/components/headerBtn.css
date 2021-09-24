@@ -1,4 +1,4 @@
-.headerBtn{
+.headerBtn {
     margin: 0 2.8rem;
     font-size: 3.5rem;
     border: none;
@@ -7,6 +7,6 @@
     cursor: pointer;
 }
 
-.headerBtn.darkMode{
+.headerBtn.darkMode {
     color: var(--accent-blue);
 }
