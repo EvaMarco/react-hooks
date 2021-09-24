@@ -104,6 +104,7 @@ module.exports = {
         "prefer-promise-reject-errors": "warn",
         "no-func-assign": "warn",
         yoda: "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     },
     overrides: [
       {
