@@ -1,9 +1,12 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useContext } from "react";
 import PropTypes from "prop-types";
 
+import ThemeContext from "../../context/ThemeContext";
+import "./pagination.css";
+
 const Pagination = ({ baseUrl, fetchCharacters, info }) => {
-    console.log(info);
+    const { darkMode } = useContext(ThemeContext);
     const [actualPage, setActualPage] = useState(1);
 
     const goFirst = useCallback(() => {
@@ -39,35 +42,50 @@ const Pagination = ({ baseUrl, fetchCharacters, info }) => {
     );
 
     return (
-        <div>
-            <button type="button" onClick={goFirst} disabled={info.prev === null ? "disabled" : ""}>
+        <div className={`paginationWrapper ${darkMode ? "darkMode" : ""}`}>
+            <button
+                className={`paginationBtn ${darkMode ? "darkMode" : ""}`}
+                type="button"
+                onClick={goFirst}
+                disabled={info.prev === null ? "disabled" : ""}
+            >
                 First
             </button>
             <button
+                className={`paginationBtn ${darkMode ? "darkMode" : ""}`}
                 type="button"
                 onClick={prevChar}
                 disabled={info.prev === null ? "disabled" : ""}
             >
                 Previous
             </button>
-            Page
-            <input
-                value={actualPage}
-                onChange={goToPage}
-                type="number"
-                min={1}
-                max={info.pages}
-                step={1}
-            />
-            of {info.pages} pages.
+            <div className={`paginationInputWrapper ${darkMode ? "darkMode" : ""}`}>
+                Page
+                <input
+                    className={`paginationInput ${darkMode ? "darkMode" : ""}`}
+                    value={actualPage}
+                    onChange={goToPage}
+                    type="number"
+                    min={1}
+                    max={info.pages}
+                    step={1}
+                />
+                of {info.pages} pages.
+            </div>
             <button
+                className={`paginationBtn ${darkMode ? "darkMode" : ""}`}
                 type="button"
                 onClick={nextChar}
                 disabled={info.next === null ? "disabled" : ""}
             >
                 Next
             </button>
-            <button type="button" onClick={goLast} disabled={info.next === null ? "disabled" : ""}>
+            <button
+                className={`paginationBtn ${darkMode ? "darkMode" : ""}`}
+                type="button"
+                onClick={goLast}
+                disabled={info.next === null ? "disabled" : ""}
+            >
                 Last
             </button>
         </div>
