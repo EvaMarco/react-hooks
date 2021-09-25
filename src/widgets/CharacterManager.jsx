@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer } from "react";
 
 import Characters from "../components/characters/Characters";
 import Pagination from "../components/Pagination/Pagination";
+import FavoriteBar from "../components/FavoriteBar/FavoriteBar";
 import favoriteReducer from "../reducer/reducer";
 
 const initialState = {
@@ -53,15 +54,7 @@ const CharacterManager = () => {
 
     return (
         <>
-            <ul>
-                {favorites.favorites.map((favorite) => (
-                    <li key={favorite.id}>
-                        <button type="button" onClick={() => removeFavoriteOnClick(favorite)}>
-                            {favorite.name}
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            <FavoriteBar favorites={favorites} removeFavoriteOnClick={removeFavoriteOnClick}/>
             <Characters handleFavoriteCLick={handleFavoriteCLick} characters={characters} />
             <Pagination baseUrl={baseUrl} fetchCharacters={fetchCharacters} info={info} />
         </>
