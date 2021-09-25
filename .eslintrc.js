@@ -5,7 +5,7 @@ module.exports = {
         browser: true,
         commonjs: true,
         es6: true,
-        jest:true,
+        jest: true,
     },
     extends: ["plugin:react/recommended", "airbnb", "prettier"],
     parserOptions: {
@@ -104,18 +104,14 @@ module.exports = {
         "prefer-promise-reject-errors": "warn",
         "no-func-assign": "warn",
         yoda: "off",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     },
     overrides: [
-      {
-        "files": [
-          "**/*.spec.js",
-          "**/*.spec.jsx",
-          "**/*.test.jsx"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
+        {
+            files: ["**/*.spec.js", "**/*.spec.jsx", "**/*.test.jsx"],
+            env: {
+                jest: true,
+            },
+        },
     ],
 };

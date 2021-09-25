@@ -13,6 +13,7 @@ In each card you will find some interesting information about the character.
 You would save your favorites characters in a top bar.
 
 Also you can adjust dark or light mode.
+
 ## How to start this project
 
 First you have to clone this repo in your computer. Then you may run `npm i` in
