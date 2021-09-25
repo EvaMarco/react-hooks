@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback, useContext, useReducer } from "react";
-import ThemeContext from "../context/ThemeContext";
+import React, { useState, useEffect, useContext, useReducer } from "react";
 
+import ThemeContext from "../context/ThemeContext";
 import CharTag from "./CharTag";
 import Pagination from "./Pagination/Pagination";
+import favoriteReducer from "../reducer/reducer";
 
 import "./characters.css";
 
@@ -10,33 +11,14 @@ const initialState = {
     favorites: [],
 };
 
-const favoriteReducer = (state, action) => {
-    switch (action.type) {
-        case "ADD_TO_FAVORITES":
-            return {
-                ...state,
-                favorites: [...state.favorites, action.payload],
-            };
-        case "REMOVE_FROM_FAVORITES": {
-            const pastState = { ...state };
-            const filtered = pastState.favorites.filter((item) => item.id !== action.payload.id);
-            return {
-                ...state,
-                favorites: filtered,
-            };
-        }
-        default:
-            return state;
-    }
-};
-
 const Characters = () => {
     const baseUrl = "https://rickandmortyapi.com/api/character/";
+
     const { darkMode } = useContext(ThemeContext);
     const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
+
     const [characters, setCharacters] = useState([]);
     const [error, setError] = useState(false);
-
     const [info, setInfo] = useState({});
 
     const fetchCharacters = (url) => {
