@@ -54,7 +54,7 @@ const CharacterManager = () => {
 
     return (
         <>
-            <FavoriteBar favorites={favorites} removeFavoriteOnClick={removeFavoriteOnClick}/>
+            <FavoriteBar favorites={favorites} removeFavoriteOnClick={removeFavoriteOnClick} />
             <Characters handleFavoriteCLick={handleFavoriteCLick} characters={characters} />
             <Pagination baseUrl={baseUrl} fetchCharacters={fetchCharacters} info={info} />
         </>
