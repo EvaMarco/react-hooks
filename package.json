@@ -7,8 +7,8 @@
         "@fortawesome/free-regular-svg-icons": "^5.15.3",
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
         "@fortawesome/react-fontawesome": "^0.1.14",
-        "@testing-library/jest-dom": "^5.13.0",
-        "@testing-library/react": "^11.2.7",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react-hooks": "^7.0.2",
         "@testing-library/user-event": "^12.8.3",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
@@ -44,6 +44,7 @@
         ]
     },
     "devDependencies": {
+        "@testing-library/react": "^11.2.7",
         "eslint": "^7.32.0",
         "eslint-config-airbnb": "^18.2.1",
         "eslint-config-prettier": "^8.3.0",
