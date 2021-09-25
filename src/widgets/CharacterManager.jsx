@@ -1,20 +1,16 @@
-import React, { useState, useEffect, useContext, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 
-import ThemeContext from "../context/ThemeContext";
-import CharTag from "./CharTag";
-import Pagination from "./Pagination/Pagination";
+import Characters from "../components/characters/Characters";
+import Pagination from "../components/Pagination/Pagination";
 import favoriteReducer from "../reducer/reducer";
-
-import "./characters.css";
 
 const initialState = {
     favorites: [],
 };
 
-const Characters = () => {
+const CharacterManager = () => {
     const baseUrl = "https://rickandmortyapi.com/api/character/";
 
-    const { darkMode } = useContext(ThemeContext);
     const [favorites, dispatch] = useReducer(favoriteReducer, initialState);
 
     const [characters, setCharacters] = useState([]);
@@ -66,19 +62,10 @@ const Characters = () => {
                     </li>
                 ))}
             </ul>
-            <div className={`characters ${darkMode ? "darkMode" : ""}`}>
-                {characters.map((character) => (
-                    <CharTag
-                        key={character.id}
-                        character={character}
-                        darkMode={darkMode}
-                        handleFavoriteCLick={handleFavoriteCLick}
-                    />
-                ))}
-            </div>
+            <Characters handleFavoriteCLick={handleFavoriteCLick} characters={characters} />
             <Pagination baseUrl={baseUrl} fetchCharacters={fetchCharacters} info={info} />
         </>
     );
 };
 
-export default Characters;
+export default CharacterManager;
