@@ -1,0 +1,26 @@
+.errorWrapper {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--error-dm); */
+}
+
+.errorWrapper.darkMode {
+    background-color: var(--clear-blue-dm);
+}
+
+.errorText {
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 2vw;
+    font-family: var(--title-font);
+    color: var(--dark-blue-dm);
+    background-color: var(--error-lm);
+}
+
+.errorWrapper.darkMode .errorText {
+    background-color: var(--error-dm);
+    color: var(--light-blue-lm);
+}

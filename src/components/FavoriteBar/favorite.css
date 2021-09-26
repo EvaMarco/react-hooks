@@ -1,0 +1,37 @@
+.favoriteBar {
+    display: flex;
+    list-style: none;
+    background-color: var(--clear-blue-lm);
+}
+
+.favoriteBar.darkMode {
+    background-color: var(--medium-blue-dm);
+}
+
+.favoriteChar {
+    margin: 10px;
+}
+
+.favoriteBtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+}
+
+.favoriteImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 0;
+    right: -7px;
+    color: var(--dark-blue-dm);
+}
+.favoriteBar.darkMode .closeIcon {
+    color: var(--soft-blue-lm);
+}

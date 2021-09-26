@@ -18,6 +18,12 @@
 
     --black-shadow: #59491e29;
     --shadow-white: #faf8f738;
+
+    --error-lm: #e28797;
+    --error-dm: #af4256;
+
+    /* Fonts */
+    --title-font: "Bebas Neue", cursive;
 }
 
 * {

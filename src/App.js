@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Characters from "./components/Characters";
-import Header from "./components/Header";
+import CharacterManager from "./widgets/CharacterManager";
+import Header from "./components/header/Header";
 import ThemeContext from "./context/ThemeContext";
 
 import "./App.css";
@@ -13,7 +13,7 @@ function App() {
         <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
             <div className="App">
                 <Header />
-                <Characters />
+                <CharacterManager />
             </div>
         </ThemeContext.Provider>
     );
