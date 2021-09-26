@@ -34,7 +34,7 @@ const Pagination = ({ baseUrl, fetchCharacters, info }) => {
     const goToPage = useCallback(
         (ev) => {
             const inputValue = ev.target.value;
-            const page = inputValue >= info.pages ? info.pages : inputValue;
+            const page = inputValue >= info.pages ? info.pages : Number(inputValue);
             fetchCharacters(`${baseUrl}?page=${page}`);
             setActualPage(page);
         },
