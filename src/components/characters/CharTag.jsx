@@ -8,7 +8,7 @@ import "./charTag.css";
 const CharTag = ({ character, darkMode, handleFavoriteCLick }) => (
     <div className={`charTag ${darkMode ? "darkMode" : ""}`}>
         <h2>{character.name}</h2>
-        <img src={character.image} alt={character.name} />
+        <img className="details-img" src={character.image} alt={character.name} />
         <ul className="details-list">
             <li className="list-item">
                 Gender: <span>{genderMapping[character.gender]}</span>

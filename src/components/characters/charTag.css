@@ -70,3 +70,8 @@
 .charTag-btn.darkMode {
     background-color: var(--green-light);
 }
+
+.details-img {
+    display: block;
+    width: 100%;
+}
