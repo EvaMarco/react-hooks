@@ -36,7 +36,7 @@ const CharTag = ({ character, darkMode, handleFavoriteCLick }) => (
 CharTag.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     character: PropTypes.object.isRequired,
-    darkMode: PropTypes.string.isRequired,
+    darkMode: PropTypes.bool.isRequired,
     handleFavoriteCLick: PropTypes.func.isRequired,
 };
 
