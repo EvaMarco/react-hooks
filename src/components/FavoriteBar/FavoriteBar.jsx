@@ -11,14 +11,19 @@ const FavoriteBar = ({ favorites, removeFavoriteOnClick }) => {
     return (
         <ul className={`favoriteBar ${darkMode ? "darkMode" : ""}`}>
             {favorites.favorites.map((favorite) => (
-                <FavoriteChar favorite={favorite} removeFavoriteOnClick={removeFavoriteOnClick} />
+                <FavoriteChar
+                    key={favorite.id}
+                    favorite={favorite}
+                    removeFavoriteOnClick={removeFavoriteOnClick}
+                />
             ))}
         </ul>
     );
 };
 
 FavoriteBar.propTypes = {
-    favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
+    favorites: PropTypes.object.isRequired,
     removeFavoriteOnClick: PropTypes.func.isRequired,
 };
 

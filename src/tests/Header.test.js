@@ -1,12 +1,11 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ThemeContext from "./context/ThemeContext";
-import Header from "./components/header/Header";
+import ThemeContext from "../context/ThemeContext";
+import Header from "../components/header/Header";
 
-test("renders Header", () => {
-    const mockedUserDispatch = jest.fn();
+test("Header must render Title", () => {
     render(
-        <ThemeContext.Provider value={{ darkMode: false, setDarkMode: mockedUserDispatch }}>
+        <ThemeContext.Provider value={{ darkMode: false, setDarkMode: () => {} }}>
             <Header />
         </ThemeContext.Provider>
     );
@@ -14,7 +13,7 @@ test("renders Header", () => {
     expect(headerText).toBeInTheDocument();
 });
 
-test("Find button and change to dark Mode", () => {
+test("Header has a button to change to dark Mode", () => {
     const mockedUserDispatch = jest.fn();
     render(
         <ThemeContext.Provider value={{ darkMode: false, setDarkMode: mockedUserDispatch }}>

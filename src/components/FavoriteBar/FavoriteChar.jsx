@@ -7,11 +7,7 @@ import "./favorite.css";
 
 const FavoriteChar = ({ favorite, removeFavoriteOnClick }) => {
     return (
-        <li
-            key={favorite.id}
-            className="favoriteChar"
-            title={`${favorite.name}. Click to remove from favorites.`}
-        >
+        <li className="favoriteChar" title={`${favorite.name}. Click to remove from favorites.`}>
             <button
                 className="favoriteBtn"
                 type="button"
@@ -26,8 +22,11 @@ const FavoriteChar = ({ favorite, removeFavoriteOnClick }) => {
 
 FavoriteChar.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
-    favorite: PropTypes.object.isRequired,
+    favorite: PropTypes.object,
     removeFavoriteOnClick: PropTypes.func.isRequired,
+};
+FavoriteChar.defaultProps = {
+    favorite: {},
 };
 
 export default FavoriteChar;
