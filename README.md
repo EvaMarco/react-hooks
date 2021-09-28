@@ -1,20 +1,23 @@
-# Course react hooks by Platzi.
+# React Hooks study.
 
-This repo has been build to learn more about react hooks, different types of hooks, and its uses. It represents a simple desk of characters get from an api.
+This repository has been created to learn more about react hooks, different
+types of hooks and their uses.
+Represents a simple deck of character cards obtained from an API.
 
 ## ¿What would you find in this project?
 
-In this project, you will find a bunch of cards of "Ricky and Morty" characters.
-In each card you will find some interesting information about the character.
-You would save your favorites characters in a top bar.
+What would you find in this project?
+In this project, you will find a lot of character cards from "Ricky and Morty".
+In each card you can read interesting information about the character.
+You can also save your favorite characters in a top bar.
 
-Also you can adjust dark or light mode.
+Finally you can set the mode to dark or light.
 
-I'm working on more functionalities.
+I am working on more functionalities.
 
 ## How to start this project
 
-First you have to clone this repo in your computer. Then you may run **`npm i`** 
+First you have to clone this repo in your computer. Then you may run **`npm i`**
 in order to install all dependencies. Then you can use all available Scripts.
 
 ### Available Scripts
@@ -44,7 +47,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Contribute withs Issues not Pull Request
+### Contribute with Issues not Pull Request please
 
-This is an study repo, I made it in order to learn new things myself. If you want to help me learn something you can create an Issue suggesting changes or proposing new functionalities. 
-
+This is an study repo, I made it in order to learn new things myself.
+If you want to help me learn something you can create an Issue suggesting
+changes or proposing new functionalities.
